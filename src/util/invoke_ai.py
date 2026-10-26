@@ -1,14 +1,13 @@
 import os
-from openai import OpenAI
+from groq import Groq
 
 
 def invoke_ai(system_message: str, user_message: str) -> str:
 
-
-    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
     response = client.chat.completions.create(
-        model="o4-mini",
+        model="qwen/qwen3.8-27b",
         messages=[
             {"role": "system", "content": system_message},
             {"role": "user", "content": user_message},

@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from typing import List
 
 
-class BaseResponseGenerator(ABC):
+class BaseRetriever(ABC):
 
     @abstractmethod
-    def generate_response(self, query: str, context: List[str]) -> str:
+    def retrieve(self, query: str, top_k: int = 3) -> List[str]:
         pass
