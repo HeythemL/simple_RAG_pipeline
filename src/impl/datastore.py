@@ -4,6 +4,7 @@ from openai import OpenAI
 from pyarrow import pa
 from typing import List
 from concurrent.futures import ThreadPoolExecutor
+from interface.base_datastore import BaseDatastore, DataItem
 
 
 class Datastore:
